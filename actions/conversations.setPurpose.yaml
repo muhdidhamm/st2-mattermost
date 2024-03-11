@@ -1,0 +1,26 @@
+description: "Sets the purpose for a conversation."
+enabled: true
+entry_point: run.py
+name: conversations.setPurpose
+parameters:
+  end_point:
+    default: conversations.setPurpose
+    immutable: true
+    type: string
+  http_method:
+    default: POST
+    required: true
+    type: string
+  channel:
+    required: false
+    description: "Conversation to set the purpose of"
+    type: string
+  purpose:
+    required: false
+    description: "A new, specialer purpose"
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `conversations:write`"
+    type: string
+runner_type: python-script

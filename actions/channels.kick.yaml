@@ -1,0 +1,26 @@
+description: "Removes a user from a channel."
+enabled: true
+entry_point: run.py
+name: channels.kick
+parameters:
+  end_point:
+    default: channels.kick
+    immutable: true
+    type: string
+  http_method:
+    default: POST
+    required: true
+    type: string
+  channel:
+    required: false
+    description: "Channel to remove user from."
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `channels:write`"
+    type: string
+  user:
+    required: false
+    description: "User to remove from channel."
+    type: string
+runner_type: python-script

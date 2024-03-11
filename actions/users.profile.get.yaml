@@ -1,0 +1,27 @@
+description: "Retrieves a user's profile information."
+enabled: true
+entry_point: run.py
+name: users.profile.get
+parameters:
+  end_point:
+    default: users.profile.get
+    immutable: true
+    type: string
+  http_method:
+    default: GET
+    required: true
+    type: string
+  include_labels:
+    required: false
+    default: false
+    description: "Include labels for each ID in custom profile fields"
+    type: boolean
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `users.profile:read`"
+    type: string
+  user:
+    required: false
+    description: "User to retrieve profile info for"
+    type: string
+runner_type: python-script

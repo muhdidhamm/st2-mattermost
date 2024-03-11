@@ -1,0 +1,30 @@
+description: "List all User Groups for a team"
+enabled: true
+entry_point: run.py
+name: usergroups.list
+parameters:
+  end_point:
+    default: usergroups.list
+    immutable: true
+    type: string
+  http_method:
+    default: GET
+    required: true
+    type: string
+  include_count:
+    required: false
+    description: "Include the number of users in each User Group."
+    type: boolean
+  include_disabled:
+    required: false
+    description: "Include disabled User Groups."
+    type: boolean
+  include_users:
+    required: false
+    description: "Include the list of users for each User Group."
+    type: boolean
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `usergroups:read`"
+    type: string
+runner_type: python-script

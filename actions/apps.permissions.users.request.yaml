@@ -1,0 +1,30 @@
+description: "Enables an app to trigger a permissions modal to grant an app access to a user access scope."
+enabled: true
+entry_point: run.py
+name: apps.permissions.users.request
+parameters:
+  end_point:
+    default: apps.permissions.users.request
+    immutable: true
+    type: string
+  http_method:
+    default: GET
+    required: true
+    type: string
+  scopes:
+    required: true
+    description: "A comma separated list of user scopes to request for"
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `none`"
+    type: string
+  trigger_id:
+    required: true
+    description: "Token used to trigger the request"
+    type: string
+  user:
+    required: true
+    description: "The user this scope is being requested for"
+    type: string
+runner_type: python-script

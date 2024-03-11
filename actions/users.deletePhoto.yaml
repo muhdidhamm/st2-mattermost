@@ -1,0 +1,18 @@
+description: "Delete the user profile photo"
+enabled: true
+entry_point: run.py
+name: users.deletePhoto
+parameters:
+  end_point:
+    default: users.deletePhoto
+    immutable: true
+    type: string
+  http_method:
+    default: GET
+    required: true
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `users.profile:write`"
+    type: string
+runner_type: python-script

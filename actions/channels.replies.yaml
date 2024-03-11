@@ -1,0 +1,26 @@
+description: "Retrieve a thread of messages posted to a channel"
+enabled: true
+entry_point: run.py
+name: channels.replies
+parameters:
+  end_point:
+    default: channels.replies
+    immutable: true
+    type: string
+  http_method:
+    default: GET
+    required: true
+    type: string
+  channel:
+    required: false
+    description: "Channel to fetch thread from"
+    type: string
+  thread_ts:
+    required: false
+    description: "Unique identifier of a thread\u0027s parent message"
+    type: number
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `channels:history`"
+    type: string
+runner_type: python-script

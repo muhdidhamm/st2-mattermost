@@ -1,0 +1,22 @@
+description: "Gets information about the current team."
+enabled: true
+entry_point: run.py
+name: team.info
+parameters:
+  end_point:
+    default: team.info
+    immutable: true
+    type: string
+  http_method:
+    default: GET
+    required: true
+    type: string
+  team:
+    required: false
+    description: "Team to get info on, if omitted, will return information about the current team. Will only return team that the authenticated token is allowed to see through external shared channels"
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `team:read`"
+    type: string
+runner_type: python-script

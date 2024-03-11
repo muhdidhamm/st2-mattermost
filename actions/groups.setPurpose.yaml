@@ -1,0 +1,26 @@
+description: "Sets the purpose for a private channel."
+enabled: true
+entry_point: run.py
+name: groups.setPurpose
+parameters:
+  end_point:
+    default: groups.setPurpose
+    immutable: true
+    type: string
+  http_method:
+    default: POST
+    required: true
+    type: string
+  channel:
+    required: false
+    description: "Private channel to set the purpose of"
+    type: string
+  purpose:
+    required: false
+    description: "The new purpose"
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `groups:write`"
+    type: string
+runner_type: python-script

@@ -1,0 +1,22 @@
+description: "Gets user presence information."
+enabled: true
+entry_point: run.py
+name: users.getPresence
+parameters:
+  end_point:
+    default: users.getPresence
+    immutable: true
+    type: string
+  http_method:
+    default: GET
+    required: true
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `users:read`"
+    type: string
+  user:
+    required: false
+    description: "User to get presence info on. Defaults to the authed user."
+    type: string
+runner_type: python-script

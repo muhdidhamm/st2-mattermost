@@ -1,0 +1,31 @@
+description: "Retrieve information about a conversation."
+enabled: true
+entry_point: run.py
+name: conversations.info
+parameters:
+  end_point:
+    default: conversations.info
+    immutable: true
+    type: string
+  http_method:
+    default: GET
+    required: true
+    type: string
+  channel:
+    required: false
+    description: "Conversation ID to learn more about"
+    type: string
+  include_locale:
+    required: false
+    description: "Set this to `true` to receive the locale for this conversation. Defaults to `false`"
+    type: boolean
+  include_num_members:
+    required: false
+    default: false
+    description: "Set to `true` to include the member count for the specified conversation. Defaults to `false`"
+    type: boolean
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `conversations:read`"
+    type: string
+runner_type: python-script

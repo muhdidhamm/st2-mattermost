@@ -1,0 +1,26 @@
+description: "Gets information about a channel."
+enabled: true
+entry_point: run.py
+name: channels.info
+parameters:
+  end_point:
+    default: channels.info
+    immutable: true
+    type: string
+  http_method:
+    default: GET
+    required: true
+    type: string
+  channel:
+    required: false
+    description: "Channel to get info on"
+    type: string
+  include_locale:
+    required: false
+    description: "Set this to `true` to receive the locale for this channel. Defaults to `false`"
+    type: boolean
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `channels:read`"
+    type: string
+runner_type: python-script

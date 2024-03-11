@@ -1,0 +1,26 @@
+description: "Sets the read cursor in a direct message channel."
+enabled: true
+entry_point: run.py
+name: im.mark
+parameters:
+  end_point:
+    default: im.mark
+    immutable: true
+    type: string
+  http_method:
+    default: POST
+    required: true
+    type: string
+  channel:
+    required: true
+    description: "Direct message channel to set reading cursor in."
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `im:write`"
+    type: string
+  ts:
+    required: true
+    description: "Timestamp of the most recently seen message."
+    type: string
+runner_type: python-script

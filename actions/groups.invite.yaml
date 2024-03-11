@@ -1,0 +1,26 @@
+description: "Invites a user to a private channel."
+enabled: true
+entry_point: run.py
+name: groups.invite
+parameters:
+  end_point:
+    default: groups.invite
+    immutable: true
+    type: string
+  http_method:
+    default: POST
+    required: true
+    type: string
+  channel:
+    required: false
+    description: "Private channel to invite user to."
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `groups:write`"
+    type: string
+  user:
+    required: false
+    description: "User to invite."
+    type: string
+runner_type: python-script

@@ -1,0 +1,22 @@
+description: "Find a user with an email address."
+enabled: true
+entry_point: run.py
+name: users.lookupByEmail
+parameters:
+  end_point:
+    default: users.lookupByEmail
+    immutable: true
+    type: string
+  http_method:
+    default: GET
+    required: true
+    type: string
+  email:
+    required: false
+    description: "An email address belonging to a user in the workspace"
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `users:read.email`"
+    type: string
+runner_type: python-script

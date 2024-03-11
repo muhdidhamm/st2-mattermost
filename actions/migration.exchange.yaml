@@ -1,0 +1,27 @@
+description: "For Enterprise Grid workspaces, map local user IDs to global user IDs"
+enabled: true
+entry_point: run.py
+name: migration.exchange
+parameters:
+  end_point:
+    default: migration.exchange
+    immutable: true
+    type: string
+  http_method:
+    default: GET
+    required: true
+    type: string
+  to_old:
+    required: false
+    default: ""
+    description: "Specify `true` to convert `W` global user IDs to workspace-specific `U` IDs. Defaults to `false`."
+    type: boolean
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `tokens.basic`"
+    type: string
+  users:
+    required: true
+    description: "A comma-separated list of user ids, up to 400 per request"
+    type: string
+runner_type: python-script

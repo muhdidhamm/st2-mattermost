@@ -1,0 +1,30 @@
+description: "Adds a reaction to an item."
+enabled: true
+entry_point: run.py
+name: reactions.add
+parameters:
+  end_point:
+    default: reactions.add
+    immutable: true
+    type: string
+  http_method:
+    default: POST
+    required: true
+    type: string
+  channel:
+    required: true
+    description: "Channel where the message to add reaction to was posted."
+    type: string
+  name:
+    required: true
+    description: "Reaction (emoji) name."
+    type: string
+  timestamp:
+    required: true
+    description: "Timestamp of the message to add reaction to."
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `reactions:write`"
+    type: string
+runner_type: python-script

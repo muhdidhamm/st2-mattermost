@@ -1,0 +1,22 @@
+description: "Reverses conversation archival."
+enabled: true
+entry_point: run.py
+name: conversations.unarchive
+parameters:
+  end_point:
+    default: conversations.unarchive
+    immutable: true
+    type: string
+  http_method:
+    default: POST
+    required: true
+    type: string
+  channel:
+    required: false
+    description: "ID of conversation to unarchive"
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `conversations:write`"
+    type: string
+runner_type: python-script

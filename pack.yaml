@@ -1,0 +1,15 @@
+---
+name : mattermost
+description : Custom StackStorm pack for Mattermost
+keywords :
+  - chat
+  - messaging
+  - instant messaging
+version: 1.0.0
+author : Muhammad Idham
+email : it@tektician.com
+contributors:
+  - muhdidhamm <muhd.idham@tektician.com>
+python_versions:
+  - "3"
+

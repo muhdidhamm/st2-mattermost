@@ -1,0 +1,63 @@
+---
+  post_message_action:
+    description: "Post message action specific settings."
+    type: "object"
+    required: false
+    additionalProperties: false
+    properties:
+      webhook_url:
+        type: "string"
+        description: "Webhook URL, e.g. https://mattermost.tektician.com/hooks/<replace me>"
+        # This value can be either specified via config or via action parameter
+        # so it should not be required
+        required: false
+        secret: true
+      channel:
+        type: "string"
+        description: "Channel to send message to - e.g. #mychannel. If not specified, will use channel selected when configuring webook"
+        required: false
+      username:
+        type: "string"
+        description: "Default name of user under which messages will be posted"
+        required: true
+      icon_emoji:
+        type: "string"
+        description: "Default icon of user under which messages will be posted"
+        required: false
+  action_token:
+    description: "Mattermost Action token."
+    type: "string"
+    required: false
+    secret: true
+  admin:
+    description: "Admin-action specific settings."
+    type: "object"
+    required: false
+    additionalProperties: false
+    properties:
+      admin_token:
+        type: "string"
+        description: "Admin-level token for adding new users"
+        default: ""
+        required: false
+        secret: true
+      organization:
+        type: "string"
+        description: "Name of organisation to add new user to"
+        required: true
+      set_active:
+        type: "boolean"
+        description: "Set new user as active? Default true"
+        default: true
+        required: false
+      attempts:
+        type: "integer"
+        description: "Number of attempts to make to add the new user"
+        default: 1
+        required: false
+      auto_join_channels:
+        type: "array"
+        description: "A list of channels to auto-join the new account to"
+        items:
+          type: "string"
+        required: false

@@ -1,0 +1,26 @@
+description: "Removes a user from a private channel."
+enabled: true
+entry_point: run.py
+name: groups.kick
+parameters:
+  end_point:
+    default: groups.kick
+    immutable: true
+    type: string
+  http_method:
+    default: POST
+    required: true
+    type: string
+  channel:
+    required: true
+    description: "Private channel to remove user from."
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `groups:write`"
+    type: string
+  user:
+    required: true
+    description: "User to remove from private channel."
+    type: string
+runner_type: python-script

@@ -1,0 +1,62 @@
+description: "Uploads or creates a file."
+enabled: true
+entry_point: files_upload.py
+name: files.upload
+parameters:
+  end_point:
+    default: files.upload
+    immutable: true
+    type: string
+  http_method:
+    # See SlackAction.run() in run.py - no other HTTP methods are supported,
+    # so why force users to specify this when they don't have to? Specifying an
+    # enum at least gives them a dropdown of the allowed options, and not
+    # requiring this parameter and defaulting to the preferred HTTP method is
+    # faster and easier for users.
+    default: POST    # From https://api.slack.com/methods/files.upload:
+    required: false  # Preferred HTTP method: POST
+    type: string
+    enum:
+      - POST
+      - GET
+  channels:
+    required: false
+    description: "Comma-separated list of channel names or IDs where the file will be shared."
+    type: string
+  content:
+    required: false
+    description: "File contents via a POST variable. If omitting this parameter, you must provide either `file` or `file_path`."
+    type: string
+  file:
+    required: false
+    description: "File contents via `multipart/form-data`. If omitting this parameter, you must provide either `file_path` or `content`."
+    type: string
+  file_path:
+    required: false
+    description: "Path to the file on the local filesystem that will be opened, read and uploaded to Slack. If omitting this parameter, you must provide either `file` or `content`."
+    type: string
+  filename:
+    required: false
+    description: "Filename of file."
+    type: string
+  filetype:
+    required: false
+    description: "A [file type](/types/file#file_types) identifier."
+    type: string
+  initial_comment:
+    required: false
+    description: "The message text introducing the file in specified `channels`."
+    type: string
+  thread_ts:
+    required: false
+    description: "Provide another message\u0027s `ts` value to upload this file as a reply. Never use a reply\u0027s `ts` value; use its parent instead."
+    type: number
+  title:
+    required: false
+    description: "Title of file."
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `files:write:user`"
+    type: string
+runner_type: python-script

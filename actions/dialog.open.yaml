@@ -1,0 +1,26 @@
+description: "Open a dialog with a user"
+enabled: true
+entry_point: run.py
+name: dialog.open
+parameters:
+  end_point:
+    default: dialog.open
+    immutable: true
+    type: string
+  http_method:
+    default: POST
+    required: true
+    type: string
+  dialog:
+    required: true
+    description: "The dialog definition. This must be a JSON-encoded string."
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `none`"
+    type: string
+  trigger_id:
+    required: true
+    description: "Exchange a trigger to post to the user."
+    type: string
+runner_type: python-script

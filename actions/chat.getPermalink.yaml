@@ -1,0 +1,26 @@
+description: "Retrieve a permalink URL for a specific extant message"
+enabled: true
+entry_point: run.py
+name: chat.getPermalink
+parameters:
+  end_point:
+    default: chat.getPermalink
+    immutable: true
+    type: string
+  http_method:
+    default: GET
+    required: true
+    type: string
+  channel:
+    required: true
+    description: "The ID of the conversation or channel containing the message"
+    type: string
+  message_ts:
+    required: true
+    description: "A message\u0027s `ts` value, uniquely identifying it within a channel"
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `none`"
+    type: string
+runner_type: python-script

@@ -1,0 +1,22 @@
+description: "Archives a channel."
+enabled: true
+entry_point: run.py
+name: channels.archive
+parameters:
+  end_point:
+    default: channels.archive
+    immutable: true
+    type: string
+  http_method:
+    default: POST
+    required: true
+    type: string
+  channel:
+    required: false
+    description: "Channel to archive"
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `channels:write`"
+    type: string
+runner_type: python-script

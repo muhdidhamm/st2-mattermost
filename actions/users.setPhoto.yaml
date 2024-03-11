@@ -1,0 +1,34 @@
+description: "Set the user profile photo"
+enabled: true
+entry_point: run.py
+name: users.setPhoto
+parameters:
+  end_point:
+    default: users.setPhoto
+    immutable: true
+    type: string
+  http_method:
+    default: POST
+    required: true
+    type: string
+  crop_w:
+    required: false
+    description: "Width/height of crop box (always square)"
+    type: integer
+  crop_x:
+    required: false
+    description: "X coordinate of top-left corner of crop box"
+    type: integer
+  crop_y:
+    required: false
+    description: "Y coordinate of top-left corner of crop box"
+    type: integer
+  image:
+    required: false
+    description: "File contents via `multipart/form-data`."
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `users.profile:write`"
+    type: string
+runner_type: python-script

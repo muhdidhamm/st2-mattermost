@@ -1,0 +1,34 @@
+description: "Un-pins an item from a channel."
+enabled: true
+entry_point: run.py
+name: pins.remove
+parameters:
+  end_point:
+    default: pins.remove
+    immutable: true
+    type: string
+  http_method:
+    default: POST
+    required: true
+    type: string
+  channel:
+    required: false
+    description: "Channel where the item is pinned to."
+    type: string
+  file:
+    required: false
+    description: "File to un-pin."
+    type: string
+  file_comment:
+    required: false
+    description: "File comment to un-pin."
+    type: string
+  timestamp:
+    required: false
+    description: "Timestamp of the message to un-pin."
+    type: number
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `pins:write`"
+    type: string
+runner_type: python-script

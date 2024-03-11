@@ -1,0 +1,22 @@
+description: "Deletes a file."
+enabled: true
+entry_point: run.py
+name: files.delete
+parameters:
+  end_point:
+    default: files.delete
+    immutable: true
+    type: string
+  http_method:
+    default: POST
+    required: true
+    type: string
+  file:
+    required: false
+    description: "ID of file to delete."
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `files:write:user`"
+    type: string
+runner_type: python-script

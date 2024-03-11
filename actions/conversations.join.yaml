@@ -1,0 +1,22 @@
+description: "Joins an existing conversation."
+enabled: true
+entry_point: run.py
+name: conversations.join
+parameters:
+  end_point:
+    default: conversations.join
+    immutable: true
+    type: string
+  http_method:
+    default: POST
+    required: true
+    type: string
+  channel:
+    required: false
+    description: "ID of conversation to join"
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `channels:write`"
+    type: string
+runner_type: python-script

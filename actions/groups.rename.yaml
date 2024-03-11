@@ -1,0 +1,30 @@
+description: "Renames a private channel."
+enabled: true
+entry_point: run.py
+name: groups.rename
+parameters:
+  end_point:
+    default: groups.rename
+    immutable: true
+    type: string
+  http_method:
+    default: POST
+    required: true
+    type: string
+  channel:
+    required: false
+    description: "Private channel to rename"
+    type: string
+  name:
+    required: false
+    description: "New name for private channel."
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `groups:write`"
+    type: string
+  validate:
+    required: false
+    description: "Whether to return errors on invalid channel name instead of modifying it to meet the specified criteria."
+    type: boolean
+runner_type: python-script

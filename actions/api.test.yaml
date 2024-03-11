@@ -1,0 +1,22 @@
+description: "Checks API calling code."
+enabled: true
+entry_point: run.py
+name: api.test
+parameters:
+  end_point:
+    default: api.test
+    immutable: true
+    type: string
+  http_method:
+    default: POST
+    required: true
+    type: string
+  error:
+    required: false
+    description: "Error response to return"
+    type: string
+  foo:
+    required: false
+    description: "example property to return"
+    type: string
+runner_type: python-script

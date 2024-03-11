@@ -1,0 +1,45 @@
+description: "Searches for messages matching a query."
+enabled: true
+entry_point: run.py
+name: search.messages
+parameters:
+  end_point:
+    default: search.messages
+    immutable: true
+    type: string
+  http_method:
+    default: GET
+    required: true
+    type: string
+  count:
+    required: false
+    default: 20
+    description: "Pass the number of results you want per \"page\". Maximum of `100`."
+    type: integer
+  highlight:
+    required: false
+    description: "Pass a value of `true` to enable query highlight markers (see below)."
+    type: boolean
+  page:
+    required: false
+    default: 1
+    type: integer
+  query:
+    required: true
+    description: "Search query."
+    type: string
+  sort:
+    required: false
+    default: "score"
+    description: "Return matches sorted by either `score` or `timestamp`."
+    type: string
+  sort_dir:
+    required: false
+    default: "desc"
+    description: "Change sort direction to ascending (`asc`) or descending (`desc`)."
+    type: string
+  token:
+    required: false
+    description: "Authentication token. Requires scope: `search:read`"
+    type: string
+runner_type: python-script
